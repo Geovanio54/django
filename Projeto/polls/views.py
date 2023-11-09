@@ -1,8 +1,12 @@
 from django.shortcuts import render
-
-# Create your views here.
-
+from django.template import loader
+from .models import Emprestimo
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Deu foi certo !!!")
+    emprestimo = Emprestimo.objects.all()
+    template = loader.get_template("polls/index.html")
+    context = {
+        "Emprestimo": emprestimo,
+    }
+    return HttpResponse(template.render(context, request))

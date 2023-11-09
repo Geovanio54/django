@@ -1,0 +1,24 @@
+{% if Emprestimo %}
+    <table border="1px solid black" >
+    {% for i in Emprestimo %}
+        <tr>
+            <td>Autor</td>
+            <td>Editora</td>
+            <td>Pagina</td>
+            <td>Idioma</td>
+            <td>Imagem</td>
+
+        </tr>
+        <tr>
+            <td>{{i.autor.autor}}</td>
+            <td>{{i.autor.editora}}</td>
+            <td>{{i.autor.paginas}}</td>
+            <td>{{i.autor.idioma}}</td>
+            <td><img src="https://imgs.search.brave.com/FAYGs-kZ4d_BZJK7bj4palxhbOAzUW0Gf8p2_m1lsDw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cGV0ei5jb20uYnIv/YmxvZy8vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjIvMDEvY3Vy/aW9zaWRhZGVzLXNv/YnJlLWxlYW8uanBn" alt=""></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
